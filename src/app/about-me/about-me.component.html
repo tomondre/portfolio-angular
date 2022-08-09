@@ -1,0 +1,235 @@
+<div class="art-info-bar">
+
+  <!-- menu bar frame -->
+  <div class="art-info-bar-frame">
+
+    <!-- info bar header -->
+    <div class="art-info-bar-header">
+      <!-- info bar button -->
+      <a class="art-info-bar-btn" href="#.">
+        <!-- icon -->
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+      <!-- info bar button end -->
+    </div>
+    <!-- info bar header end -->
+
+    <!-- info bar header -->
+    <div class="art-header">
+      <!-- avatar -->
+      <div class="art-avatar">
+        <a data-fancybox="avatar" href="img/face-2.png" class="art-avatar-curtain">
+          <img src="img/face-2.png" alt="avatar">
+          <i class="fa fa-expand"></i>
+        </a>
+        <!-- available -->
+        <div class="art-lamp-light">
+          <!-- add class 'art-not-available' if not available-->
+          <div class="art-available-lamp"></div>
+        </div>
+      </div>
+      <!-- avatar end -->
+      <!-- name -->
+      <h5 class="art-name mb-10"><a href="index.html">Tomas Ondrejka</a></h5>
+      <!-- post -->
+      <div class="art-sm-text">Software Developer <br>Software Engineering Student</div>
+    </div>
+    <!-- info bar header end -->
+
+    <!-- scroll frame -->
+    <div id="scrollbar2" class="art-scroll-frame">
+
+      <!-- info bar about -->
+      <div class="art-table p-15-15">
+        <!-- about text -->
+        <ul>
+          <!-- country -->
+          <li>
+            <h6>Residence:</h6><span>Denmark</span>
+          </li>
+          <!-- city -->
+          <li>
+            <h6>City:</h6><span>Horsens</span>
+          </li>
+          <!-- age -->
+          <li>
+            <h6>Age:</h6><span id="AgeCount"></span>
+          </li>
+          <script>
+            var dob = new Date("10/28/2000");
+            var month_diff = Date.now() - dob.getTime();
+            var age_dt = new Date(month_diff);
+            var year = age_dt.getUTCFullYear();
+            var age = Math.abs(year - 1970);
+            document.getElementById("AgeCount").innerText = age.toString();
+          </script>
+        </ul>
+      </div>
+      <!-- info bar about end -->
+
+      <!-- divider -->
+      <div class="art-ls-divider"></div>
+
+      <!-- language skills -->
+      <div class="art-lang-skills p-30-15">
+
+        <!-- skill -->
+        <div class="art-lang-skills-item">
+          <div id="circleprog1" class="art-cirkle-progress"></div>
+          <!-- title -->
+          <h6>Slovak</h6>
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-lang-skills-item">
+          <div id="circleprog2" class="art-cirkle-progress"></div>
+          <!-- title -->
+          <h6>English</h6>
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-lang-skills-item">
+          <div id="circleprog3" class="art-cirkle-progress"></div>
+          <!-- title -->
+          <h6>Danish</h6>
+        </div>
+      </div>
+      <!-- language skills end -->
+
+      <!-- divider -->
+      <div class="art-ls-divider"></div>
+
+      <!-- hard skills -->
+      <div class="art-hard-skills p-30-15">
+
+        <!-- skill -->
+        <div class="art-hard-skills-item">
+          <div class="art-skill-heading">
+            <!-- title -->
+            <h6>Java</h6>
+          </div>
+          <!-- progressbar frame -->
+          <div class="art-line-progress">
+            <!-- progressbar -->
+            <div id="lineprog1"></div>
+          </div>
+          <!-- progressbar frame end -->
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-hard-skills-item">
+          <div class="art-skill-heading">
+            <!-- title -->
+            <h6>JavaScript</h6>
+          </div>
+          <!-- progressbar frame -->
+          <div class="art-line-progress">
+            <!-- progressbar -->
+            <div id="lineprog2"></div>
+          </div>
+          <!-- progressbar frame end -->
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-hard-skills-item">
+          <div class="art-skill-heading">
+            <!-- title -->
+            <h6>DevOps</h6>
+          </div>
+          <!-- progressbar frame -->
+          <div class="art-line-progress">
+            <!-- progressbar -->
+            <div id="lineprog3"></div>
+          </div>
+          <!-- progressbar frame end -->
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-hard-skills-item">
+          <div class="art-skill-heading">
+            <!-- title -->
+            <h6>C#</h6>
+          </div>
+          <!-- progressbar frame -->
+          <div class="art-line-progress">
+            <!-- progressbar -->
+            <div id="lineprog4"></div>
+          </div>
+          <!-- progressbar frame end -->
+        </div>
+        <!-- skill end -->
+
+        <!-- skill -->
+        <div class="art-hard-skills-item">
+          <div class="art-skill-heading">
+            <!-- title -->
+            <h6>WordPress</h6>
+          </div>
+          <!-- progressbar frame -->
+          <div class="art-line-progress">
+            <!-- progressbar -->
+            <div id="lineprog5"></div>
+          </div>
+          <!-- progressbar frame end -->
+        </div>
+        <!-- skill end -->
+
+      </div>
+      <!-- language skills end -->
+
+      <!-- divider -->
+      <div class="art-ls-divider"></div>
+
+      <!-- knowledge list -->
+      <ul style="list-style-type: none">
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> SQL</li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> REST API knowledge
+        </li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Npm js development
+        </li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Git Knowledge</li>
+      </ul>
+      <!-- knowledge list end -->
+
+      <!-- divider -->
+      <div class="art-ls-divider"></div>
+
+      <!-- links frame -->
+      <div class="art-links-frame p-15-15">
+
+        <!-- download cv button -->
+        <a href="html/Pages/files/TomasOndrejkaCV.pdf" class="art-link" download>Download cv <i
+          class="fa fa-download"></i></a>
+
+      </div>
+      <!-- links frame end -->
+
+    </div>
+    <!-- scroll frame end -->
+
+    <!-- sidebar social -->
+    <div class="art-ls-social">
+      <a href="https://github.com/tomondre" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/tomas-ondrejka/" target="_blank"><i
+        class="fa fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/tomas.o.ondrejka/" target="_blank"><i
+        class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/tomas_ondrejka_/" target="_blank"><i
+        class="fa fa-instagram"></i></a>
+
+    </div>
+    <!-- sidebar social end -->
+
+  </div>
+  <!-- menu bar frame end -->
+
+</div>
