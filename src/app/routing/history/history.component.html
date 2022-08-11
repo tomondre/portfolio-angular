@@ -1,0 +1,94 @@
+<!-- container -->
+<div class="container-fluid">
+
+  <!-- row -->
+  <div class="row p-30-0">
+
+    <!-- col -->
+    <div class="col-lg-6">
+
+      <!-- section title -->
+      <div class="art-section-title">
+        <!-- title frame -->
+        <div class="art-title-frame">
+          <!-- title -->
+          <h4>Education</h4>
+        </div>
+        <!-- title frame end -->
+      </div>
+      <!-- section title end -->
+
+      <!-- timeline -->
+      <div class="art-timeline art-gallery">
+
+        <div *ngFor="let education of educations" class="art-timeline-item">
+          <div class="art-timeline-mark-light"></div>
+          <div class="art-timeline-mark"></div>
+
+          <div class="art-a art-timeline-content">
+            <div class="art-card-header">
+              <div class="art-left-side">
+                <h5>{{education.school}}</h5>
+                <div class="art-el-suptitle mb-15">{{education.degree}}
+                </div>
+              </div>
+              <div class="art-right-side">
+                <span class="art-date">{{education.startDate | date:'yyyy'}} - {{education.isCurrent? 'present': education.endDate | date:'yyyy'}}</span>
+              </div>
+            </div>
+            <div style="white-space: pre-line">
+              {{getActivities(education)}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- timeline end -->
+
+    </div>
+    <div class="col-lg-6">
+
+      <!-- section title -->
+      <div class="art-section-title">
+        <!-- title frame -->
+        <div class="art-title-frame">
+          <!-- title -->
+          <h4>Work History</h4>
+        </div>
+        <!-- title frame end -->
+      </div>
+      <!-- section title end -->
+
+      <!-- timeline -->
+      <div class="art-timeline">
+
+
+        <div *ngFor="let experience of workExperiences" class="art-timeline-item">
+          <div class="art-timeline-mark-light"></div>
+          <div class="art-timeline-mark"></div>
+
+
+          <div class="art-a art-timeline-content">
+            <div class="art-card-header">
+              <div class="art-left-side">
+                <h5>{{experience.company}}</h5>
+                <div class="art-el-suptitle mb-15">{{experience.position}}</div>
+              </div>
+              <div class="art-right-side">
+                <span class="art-date">{{experience.startDate | date:'yyyy'}} - {{experience.isCurrent? 'present': experience.endDate | date:'yyyy'}}</span>
+              </div>
+            </div>
+            <p style="white-space: pre-line">{{getResponsibilities(experience)}}</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- timeline end -->
+
+    </div>
+    <!-- col end -->
+
+  </div>
+  <!-- row end -->
+
+</div>
+<!-- container end -->
