@@ -30,7 +30,7 @@
       </div>
       <!-- avatar end -->
       <!-- name -->
-      <h5 class="art-name mb-10"><a href="index.html">Tomas Ondrejka</a></h5>
+      <h5 class="art-name mb-10"><a href="/">Tomas Ondrejka</a></h5>
       <!-- post -->
       <div class="art-sm-text">Software Developer <br>Software Engineering Student</div>
     </div>
@@ -45,24 +45,16 @@
         <ul>
           <!-- country -->
           <li>
-            <h6>Residence:</h6><span>Denmark</span>
+            <h6>Location:</h6><span>{{getLatestLocation()?.country}}</span>
           </li>
           <!-- city -->
           <li>
-            <h6>City:</h6><span>Horsens</span>
+            <h6>City:</h6><span>{{getLatestLocation()?.city}}</span>
           </li>
           <!-- age -->
           <li>
-            <h6>Age:</h6><span id="AgeCount"></span>
+            <h6>Age:</h6><span>{{getAge()}}</span>
           </li>
-          <script>
-            var dob = new Date("10/28/2000");
-            var month_diff = Date.now() - dob.getTime();
-            var age_dt = new Date(month_diff);
-            var year = age_dt.getUTCFullYear();
-            var age = Math.abs(year - 1970);
-            document.getElementById("AgeCount").innerText = age.toString();
-          </script>
         </ul>
       </div>
       <!-- info bar about end -->
@@ -108,7 +100,7 @@
         <div class="art-hard-skills-item">
           <div class="art-skill-heading">
             <!-- title -->
-            <h6>Java</h6>
+            <h6>TypeScript</h6>
           </div>
           <!-- progressbar frame -->
           <div class="art-line-progress">
@@ -123,7 +115,7 @@
         <div class="art-hard-skills-item">
           <div class="art-skill-heading">
             <!-- title -->
-            <h6>JavaScript</h6>
+            <h6>AWS</h6>
           </div>
           <!-- progressbar frame -->
           <div class="art-line-progress">
@@ -138,7 +130,7 @@
         <div class="art-hard-skills-item">
           <div class="art-skill-heading">
             <!-- title -->
-            <h6>DevOps</h6>
+            <h6>Terraform</h6>
           </div>
           <!-- progressbar frame -->
           <div class="art-line-progress">
@@ -153,27 +145,12 @@
         <div class="art-hard-skills-item">
           <div class="art-skill-heading">
             <!-- title -->
-            <h6>C#</h6>
+            <h6>Java</h6>
           </div>
           <!-- progressbar frame -->
           <div class="art-line-progress">
             <!-- progressbar -->
             <div id="lineprog4"></div>
-          </div>
-          <!-- progressbar frame end -->
-        </div>
-        <!-- skill end -->
-
-        <!-- skill -->
-        <div class="art-hard-skills-item">
-          <div class="art-skill-heading">
-            <!-- title -->
-            <h6>WordPress</h6>
-          </div>
-          <!-- progressbar frame -->
-          <div class="art-line-progress">
-            <!-- progressbar -->
-            <div id="lineprog5"></div>
           </div>
           <!-- progressbar frame end -->
         </div>
@@ -188,15 +165,13 @@
       <!-- knowledge list -->
       <ul style="list-style-type: none">
         <!-- list item -->
-        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> SQL</li>
-        <!-- list item -->
-        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> REST API knowledge
-        </li>
-        <!-- list item -->
-        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Npm js development
-        </li>
-        <!-- list item -->
         <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Git Knowledge</li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Kubernetes</li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Networking</li>
+        <!-- list item -->
+        <li style="font-family: Poppins, sans-serif;"><i class="fa fa-check"></i> Spring Boot</li>
       </ul>
       <!-- knowledge list end -->
 
@@ -207,7 +182,7 @@
       <div class="art-links-frame p-15-15">
 
         <!-- download cv button -->
-        <a href="html/Pages/files/TomasOndrejkaCV.pdf" class="art-link" download>Download cv <i
+        <a download="TomasOndrejkaCV.pdf" href="assets/TomasOndrejkaCV.pdf" target="_blank" class="art-link">Download CV <i
           class="fa fa-download"></i></a>
 
       </div>
@@ -218,13 +193,13 @@
 
     <!-- sidebar social -->
     <div class="art-ls-social">
-      <a href="https://github.com/tomondre" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://github.com/tomondre" target="_blank"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.linkedin.com/in/tomas-ondrejka/" target="_blank"><i
-        class="fa fa-linkedin"></i></a>
+        class="fa-brands fa-linkedin"></i></a>
       <a href="https://www.facebook.com/tomas.o.ondrejka/" target="_blank"><i
-        class="fa fa-facebook"></i></a>
+        class="fa-brands fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/tomas_ondrejka_/" target="_blank"><i
-        class="fa fa-instagram"></i></a>
+        class="fa-brands fa-instagram"></i></a>
 
     </div>
     <!-- sidebar social end -->

@@ -12,12 +12,12 @@
         <!-- title frame -->
         <div class="art-title-frame">
           <!-- title -->
-          <h4>Raspberry Kubernetes Cluster</h4>
+          <h4>{{project?.name}}</h4>
         </div>
         <!-- title frame end -->
         <!-- right frame -->
         <div class="art-right-frame">
-          <div class="art-project-category">Kubernetes Cluster</div>
+          <div class="art-project-category">{{project?.category}}</div>
         </div>
         <!-- right frame end -->
       </div>
@@ -34,14 +34,15 @@
         <!-- slider wrapper -->
         <div class="swiper-wrapper">
 
+
           <!-- slide -->
-          <div class="swiper-slide swiper-slide-next">
+          <div *ngFor="let pic of getProjectPictures(); let i = index" class="swiper-slide swiper-slide-next">
             <!-- item frame -->
             <a data-fancybox="gallery"
-               href="assets/img/raspberrryKubernetes/Deployment.png"
+               href="{{pic}}"
                class="art-a art-portfolio-item-frame art-horizontal">
               <!-- img -->
-              <img src="assets/img/raspberrryKubernetes/Deployment.png"
+              <img src="{{pic}}"
                    alt="item">
               <!-- zoom icon -->
               <span class="art-item-hover"><i class="fas fa-expand"></i></span>
@@ -50,69 +51,6 @@
           </div>
           <!-- slide end-->
 
-          <!-- slide -->
-          <div class="swiper-slide swiper-slide-next">
-            <!-- item frame -->
-            <a data-fancybox="gallery"
-               href="assets/img/raspberrryKubernetes/Cloudflare%20domains.png"
-               class="art-a art-portfolio-item-frame art-horizontal">
-              <!-- img -->
-              <img src="assets/img/raspberrryKubernetes/Cloudflare%20domains.png"
-                   alt="item">
-              <!-- zoom icon -->
-              <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-            </a>
-            <!-- item end -->
-          </div>
-          <!-- slide end-->
-
-          <!-- slide -->
-          <div class="swiper-slide swiper-slide-next">
-            <!-- item frame -->
-            <a data-fancybox="gallery"
-               href="assets/img/raspberrryKubernetes/Deployment%20Module.%20Usagepng.png"
-               class="art-a art-portfolio-item-frame art-horizontal">
-              <!-- img -->
-              <img src="assets/img/raspberrryKubernetes/Deployment%20Module.%20Usagepng.png"
-                   alt="item">
-              <!-- zoom icon -->
-              <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-            </a>
-            <!-- item end -->
-          </div>
-          <!-- slide end-->
-
-          <!-- slide -->
-          <div class="swiper-slide swiper-slide-next">
-            <!-- item frame -->
-            <a data-fancybox="gallery"
-               href="assets/img/raspberrryKubernetes/Services.png"
-               class="art-a art-portfolio-item-frame art-horizontal">
-              <!-- img -->
-              <img src="assets/img/raspberrryKubernetes/Services.png"
-                   alt="item">
-              <!-- zoom icon -->
-              <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-            </a>
-            <!-- item end -->
-          </div>
-          <!-- slide end-->
-
-          <!-- slide -->
-          <div class="swiper-slide swiper-slide-next">
-            <!-- item frame -->
-            <a data-fancybox="gallery"
-               href="assets/img/raspberrryKubernetes/Pods.png"
-               class="art-a art-portfolio-item-frame art-horizontal">
-              <!-- img -->
-              <img src="assets/img/raspberrryKubernetes/Pods.png"
-                   alt="item">
-              <!-- zoom icon -->
-              <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-            </a>
-            <!-- item end -->
-          </div>
-          <!-- slide end-->
 
           <!-- slider wrapper end -->
         </div>
@@ -193,28 +131,7 @@
 
       <div class="art-a art-card art-fluid-card">
         <h5 class="mb-15">Description</h5>
-        <div class="mb-15">
-          Kubernetes is a portable, extensible, open source platform for managing
-          containerized workload and services. In a recent years, Kubernetes is
-          gaining a lof of popularity due to its flexibility, multi-cloud capability,
-          increased productivity,...
-          (https://www.weave.works/blog/6-business-benefits-of-kubernetes). <br/>
-          For creating my Kubernetes cluster, I have used Rancher's K3S for its easy
-          setup and initial configuration. The computing power is provided by two
-          Raspberry Pi 4s (Model B 8gb). First Raspberry is used as master node and
-          second one as worker node.<br/>
-          Terraform modules are used for automatic deployments to the cluster. Each
-          Terraform deployment creates: K8s deployment, K8s service, Traefik ingress
-          for the load balancer and a Cloudflare DNS record that points to the
-          ingress.<br/>
-          During the project, I have followed security and networking best practises
-          including: SSH access only with RSA key, using DNS proxy, automatically
-          getting a TLS certificate from CA authority (Let's encrypt), using Cloudflare strict SSL
-          mode,...<br/>
-          Currently, the cluster contains deployments of my hobby projects. Whole
-          cluster configuration together with terraform deployments can be found on my
-          GitHub Repository.
-        </div>
+        <div class="mb-15">{{project?.description}}</div>
         <!-- button -->
       </div>
 
@@ -229,44 +146,30 @@
         <div class="art-table p-15-15">
           <ul>
             <li>
-              <h6>Start Date:</h6><span>13.5.2022</span>
+              <h6>Start Date:</h6><span>{{project?.startDate | date:'dd.MM.yyyy' }}</span>
             </li>
             <li>
-              <h6>Final Date:</h6><span>17.5.2022</span>
+              <h6>Final Date:</h6><span>{{project?.endDate | date:'dd.MM.yyyy' }}</span>
             </li>
             <li>
-              <h6>Status:</h6><span>Finished</span>
+              <h6>Status:</h6><span>{{project?.status}}</span>
             </li>
             <li>
               <h6>Client:</h6>
-              <span>Tomas Ondrejka</span>
+              <span>{{project?.client}}</span>
             </li>
             <li>
-              <h6>Location:</h6><span>Horsens, Denmark</span>
+              <h6>Location:</h6><span>{{project?.location?.country}}, {{project?.location?.city}}</span>
             </li>
             <li>
               <h6>Technologies:</h6>
-              <span>Raspberry Pi, Kubernetes, Terraform, Docker, Cloudflare, K3s, Traefik, K9s Dashboard, Ansible, TCP, HTTPS</span>
+              <span>{{getProjectTechnologies()}}</span>
             </li>
-            <li>
-              <h6>Github Repository:</h6>
+            <li *ngFor="let link of getProjectLinks() ">
+              <h6>{{link.description}}</h6>
               <span>
-                                                        <a
-                                                          href="https://github.com/tomondre/raspberry-kubernetes-cluster"
-                                                          target="_blank"><i class="fa fa-github"></i></a>
-                                                    </span>
-            </li>
-            <li>
-              <h6>Deployments:</h6>
-              <span>
-                                                        <a href="https://api-cv.tomondre.com/" target="_blank"><i
-                                                          class="fa fa-file"></i></a>
-                                                        <a href="https://portfolio.tomondre.com/" target="_blank"><i
-                                                          class="fa fa-file"></i></a>
-                                                        <a href="https://lego-scraper.tomondre.com/" target="_blank"><i
-                                                          class="fa fa-file"></i></a>
-                                                    </span>
-
+                <a href="{{link.url}}"
+                   target="_blank"><i class="{{link.type}}"></i></a></span>
             </li>
           </ul>
         </div>

@@ -27,14 +27,10 @@
         <div class="art-table p-15-15">
           <ul>
             <li>
-              <h6>Country:</h6><span>Denmark</span>
+              <h6>Country:</h6><span>{{getLatestLocation()?.country}}</span>
             </li>
             <li>
-              <h6>City:</h6><span>Horsens</span>
-            </li>
-
-            <li>
-              <h6>Street:</h6><span>Nygade</span>
+              <h6>City:</h6><span>{{getLatestLocation()?.city}}</span>
             </li>
           </ul>
         </div>
@@ -50,16 +46,16 @@
           <ul>
             <li><h6>LinkedIn:</h6><a
               href="https://www.linkedin.com/in/tomas-ondrejka/"
-              target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
             <li><h6>Github:</h6><a href="https://github.com/tomondre"
-                                   target="_blank"><i class="fa fa-github"></i></a>
+                                   target="_blank"><i class="fa-brands fa-github"></i></a>
             </li>
             <li><h6>Instagram:</h6><a
               href="https://www.instagram.com/tomas_ondrejka_/"
-              target="_blank"><i class="fa fa-instagram"></i></a></li>
+              target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             <li><h6>Facebook:</h6><a
               href="https://www.facebook.com/tomas.o.ondrejka/"
-              target="_blank"><i class="fa fa-facebook"></i></a></li>
+              target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
           </ul>
         </div>
       </div>
@@ -79,8 +75,7 @@
               <h6>Phone:</h6><span>+45 50 10 03 76</span>
             </li>
             <li>
-              <h6>CV:</h6><span><a href="files/TomasOndrejkaCV.pdf"
-                                   target="_blank"><i class="fa fa-file"></i></a></span>
+              <h6>CV:</h6><span><a download="TomasOndrejkaCV.pdf" href="assets/TomasOndrejkaCV.pdf" target="_blank"><i class="fa fa-file"></i></a></span>
             </li>
           </ul>
         </div>

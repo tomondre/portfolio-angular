@@ -1,3 +1,6 @@
+const circleValues = [1, 0.95, 0.3];
+const values = [0.9, 0.7, 0.8, 0.75];
+
 $(function () {
 
 // scrollbar
@@ -31,7 +34,7 @@ $(function () {
     }
   });
 
-  bar.animate(1);
+  bar.animate(circleValues[0]);
 
   var bar = new ProgressBar.Circle(circleprog2, {
     strokeWidth: 7,
@@ -49,7 +52,7 @@ $(function () {
     }
   });
 
-  bar.animate(0.95);
+  bar.animate(circleValues[1]);
 
   var bar = new ProgressBar.Circle(circleprog3, {
     strokeWidth: 7,
@@ -67,7 +70,7 @@ $(function () {
     }
   });
 
-  bar.animate(0.3);
+  bar.animate(circleValues[2]);
 
   var bar = new ProgressBar.Line(lineprog1, {
     strokeWidth: 1.72,
@@ -84,7 +87,7 @@ $(function () {
     }
   });
 
-  bar.animate(.90);
+  bar.animate(values[0]);
 
   var bar = new ProgressBar.Line(lineprog2, {
     strokeWidth: 1.72,
@@ -101,7 +104,7 @@ $(function () {
     }
   });
 
-  bar.animate(0.80);
+  bar.animate(values[1]);
 
   var bar = new ProgressBar.Line(lineprog3, {
     strokeWidth: 1.72,
@@ -118,7 +121,7 @@ $(function () {
     }
   });
 
-  bar.animate(.75);
+  bar.animate(values[2]);
 
   var bar = new ProgressBar.Line(lineprog4, {
     strokeWidth: 1.72,
@@ -135,22 +138,6 @@ $(function () {
     }
   });
 
-  bar.animate(.70);
+  bar.animate(values[3]);
 
-  var bar = new ProgressBar.Line(lineprog5, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 3200,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
-  });
-
-  bar.animate(.85);
 });

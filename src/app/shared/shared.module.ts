@@ -4,6 +4,7 @@ import {AboutMeComponent} from "./about-me/about-me.component";
 import {FooterComponent} from "./footer/footer.component";
 import {NavigationComponent} from "./navigation/navigation.component";
 import {ExperienceSummaryComponent} from "./experience-summary/experience-summary.component";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {ExperienceSummaryComponent} from "./experience-summary/experience-summar
     ExperienceSummaryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     AboutMeComponent,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Location from "../../models/Location";
+import {ProjectsService} from "../../services/projects/projects.service";
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  private location: Location | undefined;
+
+  constructor(private projectService: ProjectsService) { }
 
   ngOnInit(): void {
   }
 
+  getLatestLocation(): Location | undefined {
+    if (!this.location) {
+      this.projectService.getProjects().subscribe(projects => {
+        this.location = projects.reduce((prev, curr) => {
+          return prev.endDate > curr.endDate ? prev : curr;
+        }).location;
+      });
+    }
+    return this.location;
+  }
 }
