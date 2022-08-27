@@ -5,12 +5,14 @@ import {IndexComponent} from "./index/index.component";
 import {ContactComponent} from "./contact/contact.component";
 import {HistoryComponent} from "./history/history.component";
 import {ProjectComponent} from "./project/project.component";
+import {CertificateComponent} from "../certificate/certificate.component";
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'history', component: HistoryComponent },
-  { path: 'projects/:name', component: ProjectComponent },
+  { path: 'certificates', component: CertificateComponent},
+  { path: 'projects/:name', component: ProjectComponent }
 
 ]
 
@@ -21,4 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class RoutingModule { }
-export const routingComponents = [IndexComponent, ContactComponent, HistoryComponent, ProjectComponent];
+export const routingComponents = [IndexComponent, ContactComponent, HistoryComponent, ProjectComponent, CertificateComponent];

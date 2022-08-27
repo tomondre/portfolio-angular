@@ -30,7 +30,7 @@ export class HistoryComponent implements OnInit {
   getActivities(education: Education): string {
     let activities = "";
     for (let i = 0; i < education.activities.length; i++) {
-      activities += "•" + education.activities[i].activity;
+      activities += "• " + education.activities[i].activity;
         activities += "\n";
     }
     return activities;
@@ -39,7 +39,7 @@ export class HistoryComponent implements OnInit {
   getResponsibilities(experience: WorkExperience): string {
     let responsibilities = "";
     for (let i = 0; i < experience.responsibilities.length; i++) {
-      responsibilities += "•" + experience.responsibilities[i].responsibility;
+      responsibilities += "• " + experience.responsibilities[i].responsibility;
       responsibilities += "\n";
     }
     return responsibilities;

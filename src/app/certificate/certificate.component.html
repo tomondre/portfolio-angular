@@ -1,0 +1,57 @@
+<!-- container -->
+<div class="container-fluid">
+
+  <!-- row -->
+  <div class="row p-30-0">
+
+    <!-- col -->
+    <div class="col-lg-11">
+
+      <!-- section title -->
+      <div class="art-section-title">
+        <!-- title frame -->
+        <div class="art-title-frame">
+          <!-- title -->
+          <h4>Certificates</h4>
+        </div>
+        <!-- title frame end -->
+      </div>
+      <!-- section title end -->
+
+      <!-- timeline -->
+      <div class="art-timeline">
+
+
+        <div *ngFor="let certificate of certificates" class="art-timeline-item">
+          <div class="art-timeline-mark-light"></div>
+          <div class="art-timeline-mark"></div>
+
+          <div class="art-a art-timeline-content">
+            <div class="art-card-header">
+              <div class="art-left-side">
+                <h5>{{certificate.name}}</h5>
+                <div class="art-el-suptitle mb-15">{{certificate.organization}}</div>
+              </div>
+              <div class="art-right-side">
+                <span class="art-date">{{certificate.issuedDate | date:'MMM y'}} - {{ certificate.expiryDate | date:'MMM y'}}</span>
+              </div>
+            </div>
+            <h6>Description:</h6>
+            <span>{{certificate.description}}</span>
+            <h6>Credential ID:</h6>
+            <span>{{certificate.credentialId}}</span>
+            <h6>Url:</h6><a href="{{certificate.url}}" target="_blank">{{certificate.url}}</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- timeline end -->
+
+    </div>
+    <!-- col end -->
+
+  </div>
+  <!-- row end -->
+
+</div>
+<!-- container end -->

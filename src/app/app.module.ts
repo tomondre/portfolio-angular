@@ -4,11 +4,13 @@ import { AppComponent } from './app.component';
 import {SharedModule} from "./shared/shared.module";
 import {routingComponents, RoutingModule} from "./routing/routing.module";
 import {HttpClientModule} from "@angular/common/http";
+import { CertificateComponent } from './certificate/certificate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,

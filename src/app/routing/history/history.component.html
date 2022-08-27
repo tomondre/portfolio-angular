@@ -33,7 +33,7 @@
                 </div>
               </div>
               <div class="art-right-side">
-                <span class="art-date">{{education.startDate | date:'yyyy'}} - {{education.isCurrent? 'present': education.endDate | date:'yyyy'}}</span>
+                <span class="art-date">{{education.startDate | date:'MMM y'}} - {{education.isCurrent? 'present': education.endDate | date:'MMM y'}}</span>
               </div>
             </div>
             <div style="white-space: pre-line">
@@ -74,7 +74,7 @@
                 <div class="art-el-suptitle mb-15">{{experience.position}}</div>
               </div>
               <div class="art-right-side">
-                <span class="art-date">{{experience.startDate | date:'yyyy'}} - {{experience.isCurrent? 'present': experience.endDate | date:'yyyy'}}</span>
+                <span class="art-date">{{experience.startDate | date:'MMM y'}} - {{experience.isCurrent? 'present': experience.endDate | date:'MMM y'}}</span>
               </div>
             </div>
             <p style="white-space: pre-line">{{getResponsibilities(experience)}}</p>
