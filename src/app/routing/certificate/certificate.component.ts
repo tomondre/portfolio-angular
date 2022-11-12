@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CertificatesService} from "../services/certificates/certificates.service";
-import Certificate from "../models/Certificate";
+import {CertificatesService} from "../../services/certificates/certificates.service";
+import Certificate from "../../models/Certificate";
 
 @Component({
   selector: 'app-certificate',

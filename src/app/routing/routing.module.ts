@@ -5,7 +5,7 @@ import {IndexComponent} from "./index/index.component";
 import {ContactComponent} from "./contact/contact.component";
 import {HistoryComponent} from "./history/history.component";
 import {ProjectComponent} from "./project/project.component";
-import {CertificateComponent} from "../certificate/certificate.component";
+import {CertificateComponent} from "./certificate/certificate.component";
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
