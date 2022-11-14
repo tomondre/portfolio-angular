@@ -41,4 +41,4 @@ jobs:
         run: terraform init
       - name: Terraform apply
         working-directory: infrastructure
-        run: terraform apply -auto-approve -var "image_tag={{ github.run_number }}"
+        run: terraform apply -auto-approve -var "image_tag={{ github.run_number }}
