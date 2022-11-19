@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Tomondre's portfolio webpage
 run-name: CI & CD worfklows for the Kubernetes deplyment 🚀
 on: [push]
 jobs:
@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Set up QEMU
@@ -29,20 +29,24 @@ jobs:
           push: true
           tags: tomondre/notes-page:${{ github.run_number }}
 
+
   CD:
     runs-on: self-hosted
     needs: CI
+    env:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      KUBE_CONFIG_PATH: ~/kubeconfig.yaml
+      TF_TOKEN_app_terraform_io: ${{ secrets.TERRAFORM_TOKEN }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Terraform Initialize
         working-directory: infrastructure
         run: terraform init
+      - name: Set-up kube config
+        run: echo "${{ secrets.KUBE_CONFIG }}" > ~/kubeconfig.yaml
       - name: Terraform apply
         working-directory: infrastructure
-        env:
-          DOCKERHUB_USERNAME: {{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: {{ secrets.DOCKERHUB_TOKEN }}
-          CLOUDFLARE_API_TOKEN: {{ secrets.CLOUDFLARE_API_TOKEN }}
-          KUBE_TOKEN: {{ secrets.KUBE_TOKEN }}
-        run: terraform apply -auto-approve -var "image_tag={{ github.run_number }}"
+        run: terraform apply -auto-approve -var "image_tag=${{ github.run_number }}"
