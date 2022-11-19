@@ -28,7 +28,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: tomondre/notes-page:${{ github.run_number }}
+          tags: tomondre/portfolio-page:${{ github.run_number }}
 
   CD:
     runs-on: self-hosted
