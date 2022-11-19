@@ -20,7 +20,7 @@
     "@angular/router": "^14.2.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.4.1",
-    "yargs": "^17.6.2",
+    "yargs": "^17.0.13",
     "zone.js": "^0.11.8"
   },
   "devDependencies": {
