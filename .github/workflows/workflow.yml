@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: CI & CD worfklows for the Kubernetes deplyment 🚀
 on: [push]
 jobs:
   CI:
@@ -21,7 +21,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -33,6 +33,11 @@ jobs:
   CD:
     runs-on: self-hosted
     needs: CI
+    env:
+      DOCKERHUB_USERNAME: {{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: {{ secrets.DOCKERHUB_TOKEN }}
+      CLOUDFLARE_API_TOKEN: {{ secrets.CLOUDFLARE_API_TOKEN }}
+      KUBE_TOKEN: {{ secrets.KUBE_TOKEN }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -41,4 +46,4 @@ jobs:
         run: terraform init
       - name: Terraform apply
         working-directory: infrastructure
-        run: terraform apply -auto-approve -var "image_tag={{ github.run_number }}
+        run: terraform apply -auto-approve -var "image_tag={{ github.run_number }}"
