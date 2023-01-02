@@ -1,5 +1,5 @@
 name: Tomondre's portfolio webpage
-run-name: CI & CD worfklows for the Kubernetes deplyment 🚀
+run-name: CI & CD worfklows for the Kubernetes deployment 🚀
 on: [push]
 jobs:
   CI:
